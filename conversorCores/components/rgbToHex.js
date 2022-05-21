@@ -7,11 +7,11 @@ var leitor = readline.createInterface({
 
 leitor.question("Digite a cor em hexadecimal\n", function(answer) {
     var resp = answer;
-    console.log(hexRgb(resp))
+    console.log(hexToRgb(resp))
     leitor.close();
 });
 
-function hexRgb(resp) {
+function hexToRgb(resp) {
     let hex_color = resp.replace("#", "")
     let r = parseInt(hex_color.substring(0, 2), 16)
     let g = parseInt(hex_color.substring(2, 4), 16)

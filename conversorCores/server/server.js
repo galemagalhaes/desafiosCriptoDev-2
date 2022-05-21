@@ -1,12 +1,18 @@
-const http = require('http')
 const express = require('express')
 
-const port = 8080
-const server = http.createServer((request, response) => {
-    response.writeHead(200, { "Content-Type": "application/json" })
-    response.end(rgbToHex, rgbToHex)
+const port = 8080;
+
+const app = express()
+
+app.get('/rgbToHex', (req, res) => {
+    res.send('Endpoint para converter rgb para hexadecimal')
 })
 
-server.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`)
+app.get('/hexToRgb', (req, res) => {
+    res.send('Endpoint para converter hexadecimal para rgb')
+})
+
+
+app.listen(port, () => {
+console.log(`Servidor rodando na porta ${port}`)
 })
