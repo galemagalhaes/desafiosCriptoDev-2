@@ -1,24 +1,20 @@
-var readline = require('readline');
 
-var leitor = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-leitor.question("Digite a cor em hexadecimal\n", function(answer) {
-    var resp = answer;
-    console.log(hexToRgb(resp))
-    leitor.close();
-});
-
-function hexToRgb(resp) {
-    let hex_color = resp.replace("#", "")
-    let r = parseInt(hex_color.substring(0, 2), 16)
-    let g = parseInt(hex_color.substring(2, 4), 16)
-    let b = parseInt(hex_color.substring(4, 6), 16)
-    let rgbSaida = 'rgb(' + r + ',' + g + ',' + b + ')'
-    return rgbSaida
+function rgbToHex(rgb) {
+    var array = rgb.substring(4,rgb.length-1).split(',')
+    return convertRgb(array[0], array[1], array[2])
 }
+
+function convertRgb(r,g,b) {
+    let x = parseInt(r)
+    let y = parseInt(g)
+    let z = parseInt(b)
+    var convert = [x, y, z].map(x => {
+        const hex = x.toString(16)
+        return hex.length === 1 ? '0' + hex : hex
+    }).join('')
+    return '#' + convert    
+}
+
 
 module.exports = {
     rgbToHex
