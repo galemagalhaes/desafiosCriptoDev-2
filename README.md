@@ -45,3 +45,12 @@ Hexadecimal para RGB
 Teste rodando
 
 ![](conversorCores/imgs/teste.png)
+
+
+| Participantes do grupo|
+________________
+|Nome|usuario github|
+|Glaucia| galemagalhaes|
+|Felipe| FelipeGeazi|
+|Angelo| 0guilhermino|
+|Jefferson|   |
